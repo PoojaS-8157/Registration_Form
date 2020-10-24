@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>User Registration Form</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body class="body1">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <div class="regForm">
+    <h1>Registration Form</h1>
+  </div>
+  <div class="main">
+    <form action="http://127.0.0.1:5500/ThankYou.html" autocomplete="false" >
+      <div id="name">
+        <h2 class="name">Name</h2>
+        <input class="firstName" onchange=firstName(this.value) type="text" name="first_name" autocomplete="false" required><br>
+        <label class="firstLabel">first name</label>
+        <input class="lastName" onchange=lastName(this.value) type="text" autocomplete="false" name="last_name" required>
+        <label class="lastLabel">Last name</label>
+      </div>
+      <h2 class="name">Company</h2>
+      <input type="text" onchange=companyName(this.value) class="company" autocomplete="false" name="email" required>
+
+      <h2 class="name">Email</h2>
+      <input type="email" onchange=EmailId(this.value) class="email" autocomplete="false" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+
+      <h2 class="name">Phone</h2>
+      <input class="code"  type="text" value="+91" autocomplete="off" name="area_code" disabled>
+      <label class="area-code">Area Code</label>
+      <input type="text" class="number"  autocomplete="off" maxlength="10" onchange=PhoneNo(this.value) name="phone" pattern="[1-9]{1}[0-9]{9}" required>
+      <label class="phone-number">Phone Number</label>
+
+      <h2 class="name">Subject</h2>
+      <select class="option" onchange=optionValue(this.value) name="subject">
+        <option disabled="disabled" selected="selected">--Choose option</option>
+        <option value="Computer">Computer</option>
+        <option value="Science">Science</option>
+        <option value="Electronic">Electronic</option>
+      </select>
+
+      <h2 class="student">Are you beginner ?</h2>
+      <label class="radio">
+        <input class="radio-one" value="Yes" onchange=studentExperience(this.value) type="radio" checked=true
+          name="bigner">
+        Yes
+
+      </label>
+
+      <label class="radio">
+        <input class="radio-two" value="No" onchange=studentExperience(this.value) type="radio" name="bigner">
+        No
+      </label>
+
+      <div class= "btnClass">
+        <button  type="submit"  onclick=UserInfo()>Register</button>
+        <button type="button" class="Refresh" onclick=clearScreen()>Refresh</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+<script src=index.js>
+</script>
+
+</html>
